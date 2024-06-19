@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   docker-tinyproxy:
+    restart: always
     image: msoo.ces.myfiinet.com:6702/docker-tinyproxy:0.1.0
     build:
       context: .
