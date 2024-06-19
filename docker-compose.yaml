@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  docker-tinyproxy:
+    image: msoo.ces.myfiinet.com:6702/docker-tinyproxy:0.1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - BASIC_AUTH_USER=HPCDEV
+      - BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASSWORD}
+
+    command: ANY # ACL
+    ports:
+      - "6601:8888"
